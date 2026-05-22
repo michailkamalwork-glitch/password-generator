@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <button id="lang-toggle" onclick="toggleLanguage()">Switch to English</button>
+        
+        <h1 id="title">إنشاء كلمة مرور آمنة وعشوائية فوراً</h1>
+        
+        <div class="password-display">
+            <input type="text" id="password-input" readonly value="BEMRCA">
+            <div class="actions">
+                <span class="icon" onclick="copyPassword()">📋</span>
+                <span class="icon" onclick="generatePassword()">🔄</span>
+            </div>
+            <div class="strength-bar"><div id="strength-fill"></div></div>
+        </div>
+
+        <div class="settings-card">
+            <h2 id="subtitle">تخصيص كلمة المرور</h2>
+            
+            <div class="row">
+                <div class="option-group">
+                    <label id="label-length">طول كلمة المرور</label>
+                    <div class="slider-container">
+                        <input type="number" id="length-val" value="6" min="1" max="50">
+                        <input type="range" id="length-slider" min="1" max="50" value="6">
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <label><input type="radio" name="style" id="easy-say"> <span id="opt-say">سهلة النطق</span></label>
+                    <label><input type="radio" name="style" id="easy-read" checked> <span id="opt-read">سهلة القراءة</span></label>
+                    <label><input type="radio" name="style" id="all-chars"> <span id="opt-all">جميع الرموز</span></label>
+                </div>
+
+                <div class="option-group">
+                    <label><input type="checkbox" id="uppercase" checked> <span id="opt-upper">حروف كبيرة</span></label>
+                    <label><input type="checkbox" id="lowercase"> <span id="opt-lower">حروف صغيرة</span></label>
+                    <label><input type="checkbox" id="numbers"> <span id="opt-nums">أرقام</span></label>
+                    <label><input type="checkbox" id="symbols"> <span id="opt-syms">رموز</span></label>
+                </div>
+            </div>
+        </div>
+
+        <button class="copy-btn" id="main-copy-btn" onclick="copyPassword()">نسخ كلمة المرور</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
